@@ -10,6 +10,7 @@ public class Calculators {
 	//private int budget;
 	private boolean fries;
 	
+	
 	public Calculators() {
 		numPeople = 0;
 		wingsPerPerson = 0;
@@ -22,8 +23,16 @@ public class Calculators {
 		
 		wingsByPeople = wingsByPeople * hungerLevel;
 		
+		
 		return wingsByPeople;
 	}
+	
+	public int returnFries() {
+		if(fries) {
+			return numPeople;
+		}
+	}
+
 	
 	
 	//calculate total wings * numPeople
