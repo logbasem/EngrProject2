@@ -20,6 +20,8 @@ public class Calculators {
 	public int returnNumWings() {
 		int wingsByPeople = numPeople * wingsPerPerson;
 		
+		wingsByPeople = wingsByPeople * hungerLevel;
+		
 		return wingsByPeople;
 	}
 	
