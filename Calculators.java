@@ -10,7 +10,6 @@ public class Calculators {
 	//private int budget;
 	private boolean fries;
 	
-	
 	public Calculators() {
 		numPeople = 0;
 		wingsPerPerson = 0;
@@ -18,11 +17,24 @@ public class Calculators {
 		fries = false;
 	}
 	
+	public Calculators(int numPeople, int wingsPerPerson, int hungerLevel, boolean fries) {
+		this.numPeople = numPeople;
+		this.wingsPerPerson = wingsPerPerson;
+		this.hungerLevel = hungerLevel;
+		this.fries = fries;
+	}
+	
 	public int returnNumWings() {
 		int wingsByPeople = numPeople * wingsPerPerson;
 		
-		wingsByPeople = wingsByPeople * hungerLevel;
-		
+		if(hungerLevel == 1) {
+			wingsByPeople*=1;
+		}
+		else if(hungerLevel == 2) {
+			wingsByPeople*=1.5;
+		} else {
+			wingsByPeople*=2;
+		}
 		
 		return wingsByPeople;
 	}
@@ -30,18 +42,9 @@ public class Calculators {
 	public int returnFries() {
 		if(fries) {
 			return numPeople;
+		} else {
+			return 0;
 		}
 	}
-
-	
-	
-	//calculate total wings * numPeople
-	
-	
-	
-	//calculate hungerLevel multiplier
-	
-	
-	//add fries if fries true
 	
 }
